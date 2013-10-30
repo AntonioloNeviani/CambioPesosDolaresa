@@ -64,7 +64,7 @@ public partial class MainWindow
 		this.txtCam = new global::Gtk.Entry ();
 		this.txtCam.CanFocus = true;
 		this.txtCam.Name = "txtCam";
-		this.txtCam.Text = global::Mono.Unix.Catalog.GetString ("0.087");
+		this.txtCam.Text = global::Mono.Unix.Catalog.GetString ("10.50");
 		this.txtCam.IsEditable = true;
 		this.txtCam.InvisibleChar = '•';
 		this.fixed1.Add (this.txtCam);

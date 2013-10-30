@@ -30,21 +30,28 @@ public partial class MainWindow: Gtk.Window
 
 			//Calcular
 
-			usd = mxn * cam;
+			usd = mxn / cam;
 			
 			//Compara si es un 0
 			
-			if(usd == 0){
-				MessageDialog md = new MessageDialog(null, DialogFlags.Modal, MessageType.Info, ButtonsType.None,"Hey no convierto: "+ usd);
+			if(cam == 0 ){
+				MessageDialog md = new MessageDialog(null, DialogFlags.Modal, MessageType.Info, ButtonsType.None,"Hey no convierto: 0");
+				md.Show();
+			}else if(mxn == 0){
+				MessageDialog md = new MessageDialog(null, DialogFlags.Modal, MessageType.Info, ButtonsType.None,"Hey no convierto: 0");
+				md.Show();
+			}else if(usd == 0){
+				MessageDialog md = new MessageDialog(null, DialogFlags.Modal, MessageType.Info, ButtonsType.None,"Hey no convierto: 0");
 				md.Show();
 			}else{
 				MessageDialog md = new MessageDialog(null, DialogFlags.Modal, MessageType.Info, ButtonsType.None,"Tu resultado en Dolares es: $"+ usd);
 				md.Show();
+				txtUSD.Text = usd.ToString();
 			}
 
 			//Mostrar Resultados
 
-			txtUSD.Text = usd.ToString();
+			
 			
 		// Cacha la Exception
 		
@@ -59,7 +66,7 @@ public partial class MainWindow: Gtk.Window
 	{
 		//Variables
 		
-        double usd = 0, mxn = 0, cam = 0.087;
+        double usd = 0, mxn = 0, cam = 10.50;
 		
         //Resetear Casillas al valor propuesto
         
