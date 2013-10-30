@@ -94,7 +94,7 @@ namespace CambioPesosDolaresa
 			this.txtCam.Name = "txtCam";
 			this.txtCam.Size = new System.Drawing.Size(100, 20);
 			this.txtCam.TabIndex = 5;
-			this.txtCam.Text = "0.087";
+			this.txtCam.Text = "10.5";
 			// 
 			// txtUSD
 			// 

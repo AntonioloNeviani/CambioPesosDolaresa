@@ -34,56 +34,40 @@ namespace CambioPesosDolaresa
 		{
 			//Variables
             double usd, mxn, cam;
-			
 			try 
 				{
 				//Asignacion de valores
-				
 				cam = System.Double.Parse(txtCam.Text);
 				mxn = System.Double.Parse(txtMXN.Text);
-
-				//Calcular
-
-				usd = mxn * cam;
-				
 				//Compara si es un 0
-				
-				if(usd == 0){
-					MessageBox.Show("Hey no convierto: "+ usd);
+				if(mxn == 0 || cam == 0){
+					MessageBox.Show("Hey no convierto ceros");
 				}else{
+					//Calcular
+					usd = mxn / cam;
+					//Mostrar Resultados
+					txtUSD.Text = usd.ToString();
 					MessageBox.Show("Tu resultado en Dolares es: "+ usd);
 				}
-
-				//Mostrar Resultados
-
-				txtUSD.Text = usd.ToString();
-				
 			// Cacha la Exception
-			
 			}catch(Exception h)
 				{
 					MessageBox.Show("No Acepto campos vacios, ni letras, ni simbolos raros\n\n"+
 				                "Exception: " + h.Message);
 				}
 		}
-		
 		void Button2Click(object sender, EventArgs e)
 		{
-			//Variables
-			
-            double usd = 0, mxn = 0, cam = 0.087;
-			
+			//Variables con valores asignados
+            double usd = 0, mxn = 0, cam = 10.50;
             //Resetear Casillas al valor propuesto
-            
             txtUSD.Text = usd.ToString();
 			txtMXN.Text = mxn.ToString();
 			txtCam.Text = cam.ToString();
 		}
-		
 		void Button3Click(object sender, EventArgs e)
 		{
 			//cerrar programa
-            
             MessageBox.Show("Nos vemos, bye :)");
             Close();
 		}
